@@ -1,7 +1,15 @@
 @import "tailwindcss";
 
-/* @layer components {
-  .container {
-    @apply max-w-xl p-5 my-0 m-auto;
+@layer components {
+  .card-meta {
+    @apply flex justify-start items-center w-auto gap-1;
   }
-} */
+
+  .meta-icon {
+    @apply flex items-center;
+  }
+
+  .meta-text {
+    @apply text-xs font-normal text-gray-700 whitespace-nowrap;
+  }
+}

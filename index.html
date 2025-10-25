@@ -10,7 +10,7 @@
   <body>
     <header class="bg-[#0056b3] text-white">
       <div
-        class="flex items-center text-center justify-center gap-8 container m-auto my-0 py-4 px-5"
+        class="container flex items-center text-center justify-center m-auto my-0 py-4 px-5 gap-4 sm:gap-8"
       >
         <img
           src="./assets/logo.jpg"
@@ -27,9 +27,26 @@
       </div>
     </header>
 
-    <main>
-      <nav>
-        <a href="javascript:history.back()"><- Voltar</a>
+    <main class="bg-[#f4f7fb]">
+      <nav class="flex items-center px-4 py-2.5 text-[#0056b3]">
+        <button
+          onclick="history.back()"
+          class="flex items-center gap-1.5 text-base font-bold cursor-pointer hover:text-[#003d80] transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="h-4 stroke-current stroke-3 relative top-[1px]"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
+          </svg>
+          Voltar
+        </button>
       </nav>
 
       <section>
@@ -54,100 +71,431 @@
 
       <section class="p-6">
         <div>
-          <ul class="grid grid-cols-4 gap-6">
+          <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             <li>
               <article>
                 <a href="#">
-                  <div class="flex flex-col">
-                    <div class="flex justify-between">
-                      <div class="flex gap-2">
-                        <img src="#" alt="Logo Empresa" />
-                        <h3>Unimed</h3>
+                  <div class="flex flex-col bg-white rounded-xl shadow-md p-4">
+                    <div class="flex justify-between items-center">
+                      <div class="flex items-center">
+                        <span
+                          class="inline-block w-10 h-10 overflow-hidden relative m-auto"
+                        >
+                          <img
+                            src="./assets/icons/unimed.svg"
+                            alt="Logo Empresa"
+                            class="absolute inset-0 w-0 h-0 max-w-full max-h-full min-h-full min-w-full border-0"
+                          />
+                        </span>
+                        <h3 class="text-base m-2">Unimed</h3>
                       </div>
-                      <img
-                        src="./assets/icons/favorite-svgrepo-com.svg"
-                        alt="Favoritar"
-                        class="h-7 w-9"
-                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+                        />
+                      </svg>
                     </div>
-
-                    <h3>
-                      Enfermeiro(A) Regulador(a) - Hospital Unimed Uberlândia
+                    <h3
+                      class="text-base font-bold mt-2 line-clamp-2 overflow-hidden mb-4 h-11"
+                    >
+                      Assistente Administrativo de Usina I – Vaga Afirmativa
+                      para Profissionais com Deficiência (PcD) - Indianópolis/MG
                     </h3>
-
-                    <div class="grid">
-                      <div>
-                        <div>
-                          <img src="#" alt="Icone de Localização de Trabalho" />
+                    <div class="h-14 mb-4">
+                      <div class="grid grid-cols-2 gap-1">
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              class="h-6 w-4"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="m9.69 18.933.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 1 0 3 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 0 0 2.273 1.765 11.842 11.842 0 0 0 .976.544l.062.029.018.008.006.003ZM10 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">São Paulo - SP</span>
                         </div>
-                        <span>São Paulo - SP</span>
-                      </div>
 
-                      <div>
-                        <div>
-                          <img src="#" alt="Icone de Modelo de Trabalho" />
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="h-6 w-4"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">Presencial</span>
                         </div>
-                        <span>Presencial</span>
-                      </div>
 
-                      <div>
-                        <div>
-                          <img src="#" alt="Efetivo" />
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="currentColor"
+                              viewBox="0 0 16 16"
+                              class="bi bi-bag-fill h-6 w-4"
+                            >
+                              <path
+                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">Efetivo</span>
                         </div>
-                        <span>Efetivo</span>
                       </div>
                     </div>
                     <div>
-                      <hr />
-                      <p>Publicada em: 23/09/2025</p>
+                      <hr / class="w-full m-4 mx-0 mt-0">
+                      <p class="text-sm text-gray-700">
+                        Publicada em: 23/09/2025
+                      </p>
                     </div>
                   </div>
                 </a>
               </article>
             </li>
+
+            <!--Segunda Vaga-->
             <li>
-              <div>
+              <article>
                 <a href="#">
-                  <div>
-                    <div>
-                      <div>
-                        <img src="#" alt="Logo Empresa" />
-                        <h3>Unimed</h3>
+                  <div class="flex flex-col bg-white rounded-xl shadow-md p-4">
+                    <div class="flex justify-between items-center">
+                      <div class="flex items-center">
+                        <span
+                          class="inline-block w-10 h-10 overflow-hidden relative m-auto"
+                        >
+                          <img
+                            src="./assets/icons/unimed.svg"
+                            alt="Logo Empresa"
+                            class="absolute inset-0 w-0 h-0 max-w-full max-h-full min-h-full min-w-full border-0"
+                          />
+                        </span>
+                        <h3 class="text-base m-2">Unimed</h3>
                       </div>
-                      <img src="#" alt="Favoritar" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+                        />
+                      </svg>
                     </div>
-
-                    <h3>Medico(A) Regulador(a) - Hospital Unimed Uberlândia</h3>
-
-                    <div class="grid">
-                      <div>
-                        <div>
-                          <img src="#" alt="Icone de Localização de Trabalho" />
+                    <h3
+                      class="text-base font-bold mt-2 line-clamp-2 overflow-hidden mb-4 h-11"
+                    >
+                      Assistente Administrativo de Usina I – Vaga Afirmativa
+                      para Profissionais com Deficiência (PcD) - Indianópolis/MG
+                    </h3>
+                    <div class="h-14 mb-4">
+                      <div class="grid grid-cols-2 gap-1">
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              class="h-6 w-4"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="m9.69 18.933.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 1 0 3 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 0 0 2.273 1.765 11.842 11.842 0 0 0 .976.544l.062.029.018.008.006.003ZM10 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">São Paulo - SP</span>
                         </div>
-                        <span>São Paulo - SP</span>
-                      </div>
 
-                      <div>
-                        <div>
-                          <img src="#" alt="Icone de Modelo de Trabalho" />
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="h-6 w-4"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">Presencial</span>
                         </div>
-                        <span>Presencial</span>
-                      </div>
 
-                      <div>
-                        <div>
-                          <img src="#" alt="Efetivo" />
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="currentColor"
+                              viewBox="0 0 16 16"
+                              class="bi bi-bag-fill h-6 w-4"
+                            >
+                              <path
+                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">Efetivo</span>
                         </div>
-                        <span>Efetivo</span>
                       </div>
                     </div>
                     <div>
-                      <hr />
-                      <p>Publicada em: 23/09/2025</p>
+                      <hr / class="w-full m-4 mx-0 mt-0">
+                      <p class="text-sm text-gray-700">
+                        Publicada em: 23/09/2025
+                      </p>
                     </div>
                   </div>
                 </a>
-              </div>
+              </article>
+            </li>
+
+            <!--terceira Vaga-->
+            <li>
+              <article>
+                <a href="#">
+                  <div class="flex flex-col bg-white rounded-xl shadow-md p-4">
+                    <div class="flex justify-between items-center">
+                      <div class="flex items-center">
+                        <span
+                          class="inline-block w-10 h-10 overflow-hidden relative m-auto"
+                        >
+                          <img
+                            src="./assets/icons/unimed.svg"
+                            alt="Logo Empresa"
+                            class="absolute inset-0 w-0 h-0 max-w-full max-h-full min-h-full min-w-full border-0"
+                          />
+                        </span>
+                        <h3 class="text-base m-2">Unimed</h3>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+                        />
+                      </svg>
+                    </div>
+                    <h3
+                      class="text-base font-bold mt-2 line-clamp-2 overflow-hidden mb-4 h-11"
+                    >
+                      Assistente Administrativo de Usina I – Vaga Afirmativa
+                      para Profissionais com Deficiência (PcD) - Indianópolis/MG
+                    </h3>
+                    <div class="h-14 mb-4">
+                      <div class="grid grid-cols-2 gap-1">
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              class="h-6 w-4"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="m9.69 18.933.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 1 0 3 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 0 0 2.273 1.765 11.842 11.842 0 0 0 .976.544l.062.029.018.008.006.003ZM10 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">São Paulo - SP</span>
+                        </div>
+
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="h-6 w-4"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">Presencial</span>
+                        </div>
+
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="currentColor"
+                              viewBox="0 0 16 16"
+                              class="bi bi-bag-fill h-6 w-4"
+                            >
+                              <path
+                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">Efetivo</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <hr / class="w-full m-4 mx-0 mt-0">
+                      <p class="text-sm text-gray-700">
+                        Publicada em: 23/09/2025
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <!--Quarta vaga-->
+            <li>
+              <article>
+                <a href="#">
+                  <div class="flex flex-col bg-white rounded-xl shadow-md p-4">
+                    <div class="flex justify-between items-center">
+                      <div class="flex items-center">
+                        <span
+                          class="inline-block w-10 h-10 overflow-hidden relative m-auto"
+                        >
+                          <img
+                            src="./assets/icons/unimed.svg"
+                            alt="Logo Empresa"
+                            class="absolute inset-0 w-0 h-0 max-w-full max-h-full min-h-full min-w-full border-0"
+                          />
+                        </span>
+                        <h3 class="text-base m-2">Unimed</h3>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+                        />
+                      </svg>
+                    </div>
+                    <h3
+                      class="text-base font-bold mt-2 line-clamp-2 overflow-hidden mb-4 h-11"
+                    >
+                      Assistente Administrativo de Usina I – Vaga Afirmativa
+                      para Profissionais com Deficiência (PcD) - Indianópolis/MG
+                    </h3>
+                    <div class="h-14 mb-4">
+                      <div class="grid grid-cols-2 gap-1">
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              class="h-6 w-4"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="m9.69 18.933.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 1 0 3 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 0 0 2.273 1.765 11.842 11.842 0 0 0 .976.544l.062.029.018.008.006.003ZM10 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">São Paulo - SP</span>
+                        </div>
+
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="h-6 w-4"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">Presencial</span>
+                        </div>
+
+                        <div class="card-meta">
+                          <div class="meta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="currentColor"
+                              viewBox="0 0 16 16"
+                              class="bi bi-bag-fill h-6 w-4"
+                            >
+                              <path
+                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"
+                              />
+                            </svg>
+                          </div>
+                          <span class="meta-text">Efetivo</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <hr / class="w-full m-4 mx-0 mt-0">
+                      <p class="text-sm text-gray-700">
+                        Publicada em: 23/09/2025
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </article>
             </li>
           </ul>
         </div>
