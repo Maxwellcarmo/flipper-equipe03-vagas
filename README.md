@@ -7,4 +7,4 @@ Compilar tailwind enquanto escreve:
 Icons:
 
 - https://icons.getbootstrap.com/icons/bag-fill
-- https://heroicons.com/ outline
+- https://heroicons.com/outline
