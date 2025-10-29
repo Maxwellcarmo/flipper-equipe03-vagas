@@ -1,109 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flipper 03 Vagas</title>
-
+    <title>Flipper | Vagas Internas</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="custom.css" />
   </head>
   <body>
-    <header
-      class="bg-[#0056b3] text-white py-4 px-5 flex justify-center text-center items-center"
-    >
-      <div class="flex items-center gap-8 max-w-xl p-5 my-0 m-auto">
+    <header>
+      <div class="header-content">
         <img
           src="./assets/logo.jpg"
           alt="Logo do Flipper - Golfinho"
-          class="h-23 rounded-full"
+          class="logo-principal"
         />
-        <div class="flex flex-col items-start text-left">
-          <h1 class="text-xl font-bold">Flipper</h1>
-          <p class="text-base font-medium mt-1">Conectando Conhecimento</p>
-          <p class="text-sm text-gray-200 mt-0.5 italic">
-            Av. Tecnologia 404 - Uberlândia/MG
-          </p>
+        <div class="titulo-header">
+          <h1>Flipper</h1>
+          <p>Conectando Conhecimento</p>
+          <p class="endereco">Av. Tecnologia 404 - Uberlândia/MG</p>
         </div>
       </div>
     </header>
 
     <main>
       <nav>
-        <a href="javascript:history.back()"><- Voltar</a>
+        <a href="javascript:history.back()" class="voltar">← Voltar</a>
       </nav>
 
-      <section>
-        <div class="container">
-          <h2>Vagas Internas</h2>
-
-          <div>
-            <input
-              type="text"
-              id="busca-vagas"
-              placeholder="Buscar vaga por título..."
-            />
-          </div>
-
-          <div>
-            <!--Filtros futuros-->
-            <img />
-            <strong>Filtros</strong>
-          </div>
-        </div>
+      <section class="busca-vagas">
+        <h2>Vagas Internas</h2>
+        <input
+          type="text"s
+          id="busca-vagas"
+          placeholder="Buscar vaga por título..."
+        />
       </section>
 
-      <section>
-        <div class="container">
-          <ul>
-            <li>
-              <div>
-                <a href="#">
-                  <div>
-                    <div>
-                      <div>
-                        <img src="#" alt="Logo Empresa" />
-                        <h3>Unimed</h3>
-                      </div>
-                      <img src="#" alt="Favoritar" />
-                    </div>
-
-                    <h3>
-                      Enfermeiro(A) Regulador(a) - Hospital Unimed Uberlândia
-                    </h3>
-
-                    <div class="grid">
-                      <div>
-                        <div>
-                          <img src="#" alt="Icone de Localização de Trabalho" />
-                        </div>
-                        <span>São Paulo - SP</span>
-                      </div>
-
-                      <div>
-                        <div>
-                          <img src="#" alt="Icone de Modelo de Trabalho" />
-                        </div>
-                        <span>Presencial</span>
-                      </div>
-
-                      <div>
-                        <div>
-                          <img src="#" alt="Efetivo" />
-                        </div>
-                        <span>Efetivo</span>
-                      </div>
-                    </div>
-                    <div>
-                      <hr />
-                      <p>Publicada em: 23/09/2025</p>
-                    </div>
-                  </div>
-                </a>
+      <section class="lista-vagas">
+        <ul>
+          <li>
+            <a href="#" class="card-vaga">
+              <div class="topo-card">
+                <div class="empresa-info">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Unimed_logo.png"
+                    alt="Logo Empresa"
+                    class="logo-empresa"
+                  />
+                  <h3>Unimed</h3>
+                </div>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/833/833472.png"
+                  alt="Favoritar"
+                  class="icone-favorito"
+                />
               </div>
-            </li>
-          </ul>
-        </div>
+
+              <h4>Enfermeiro(a) Regulador(a) - Hospital Unimed Uberlândia</h4>
+
+              <div class="detalhes-vaga">
+                <div>📍 São Paulo - SP</div>
+                <div>🏢 Presencial</div>
+                <div>💼 Efetivo</div>
+              </div>
+
+              <hr />
+              <p class="publicada">Publicada em: 23/09/2025</p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="card-vaga">
+              <div class="topo-card">
+                <div class="empresa-info">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/24/Nubank_logo_2021.svg"
+                    alt="Logo Empresa"
+                    class="logo-empresa"
+                  />
+                  <h3>Nubank</h3>
+                </div>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/833/833472.png"
+                  alt="Favoritar"
+                  class="icone-favorito"
+                />
+              </div>
+
+              <h4>Analista de Dados Júnior - São Paulo</h4>
+
+              <div class="detalhes-vaga">
+                <div>📍 São Paulo - SP</div>
+                <div>💻 Híbrido</div>
+                <div>💼 Efetivo</div>
+              </div>
+
+              <hr />
+              <p class="publicada">Publicada em: 20/09/2025</p>
+            </a>
+          </li>
+        </ul>
       </section>
+
+      <footer>
+        © 2025 Flipper — Conectando Conhecimento. Todos os direitos reservados.
+      </footer>
     </main>
   </body>
 </html>
