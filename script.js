@@ -241,3 +241,8 @@ qs("#applyFilters")?.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   aplicarFiltros();
 });
+
+qs("#toggleFiltros")?.addEventListener("click", () => {
+  const filtros = qs("#filtrosContainer");
+  filtros.classList.toggle("oculto");
+});

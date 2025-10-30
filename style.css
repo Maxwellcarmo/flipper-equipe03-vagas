@@ -653,3 +653,51 @@ footer {
   font-weight: bold; /* garante o negrito */
   margin-bottom: 0.5rem;
 }
+
+.filtro-toggle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#toggleFiltros {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#toggleFiltros:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+.oculto {
+  display: none;
+}
+
+.btn-applyfilters {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.btn-applyfilters:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+.btn-applyfilters:focus {
+  outline: none;
+}

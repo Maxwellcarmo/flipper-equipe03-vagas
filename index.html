@@ -28,48 +28,64 @@
     </header>
 
     <main>
-      <div id="vagaList" class="vaga-list"></div>
-      <div id="pagination" class="pagination"></div>
+  <!-- 🔍 Caixa de busca com lupa -->
+  <div class="filtro-toggle">
+    <button id="toggleFiltros">🔍 Buscar vagas</button>
+  </div>
+
+  <!-- 🎯 Filtros ocultáveis -->
+<div id="filtrosContainer" class="filters oculto">
+  <input type="text" id="searchText" placeholder="Buscar por palavra-chave">
+  
+  <select id="filterArea">
+    <option value="">Área</option>
+    <option value="TI">TI</option>
+    <option value="Administração">Administração</option>
+    <option value="Engenharia">Engenharia</option>
+  </select>
+  
+  <select id="filterCurso">
+    <option value="">Curso</option>
+    <option value="Sistemas de Informação">Sistemas de Informação</option>
+    <option value="Administração">Administração</option>
+    <option value="Engenharia Civil">Engenharia Civil</option>
+  </select>
+  
+  <select id="filterTipo">
+    <option value="">Tipo</option>
+    <option value="Estágio">Estágio</option>
+    <option value="Emprego">Emprego</option>
+  </select>
+  
+  <select id="filterStatus">
+    <option value="">Status</option>
+    <option value="Aberta">Aberta</option>
+    <option value="Encerrada">Encerrada</option>
+  </select>
+  
+  <select id="orderBy">
+    <option value="data">Mais recentes</option>
+    <option value="relevancia">Mais relevantes</option>
+  </select>
+  
+  <button id="applyFilters" class="btn-applyfilters">Aplicar filtros</button>
+
+</div>
+
+  <!-- 📋 Lista de vagas -->
+  <div id="vagaList" class="vaga-list"></div>
+
+  <!-- 🔢 Paginação -->
+  <div id="pagination"></div>
     </main>
 
-       <section class="filters">
-    <input type="text" id="searchText" placeholder="Buscar por título, descrição ou requisitos..." />
-    <select id="filterArea">
-      <option value="">Área de atuação</option>
-      <option value="TI">TI</option>
-      <option value="Administração">Administração</option>
-      <option value="Engenharia">Engenharia</option>
-    </select>
-    <select id="filterCurso">
-      <option value="">Curso</option>
-      <option value="Sistemas de Informação">Sistemas de Informação</option>
-      <option value="Engenharia Civil">Engenharia Civil</option>
-      <option value="Administração">Administração</option>
-    </select>
-    <select id="filterTipo">
-      <option value="">Tipo de vaga</option>
-      <option value="Estágio">Estágio</option>
-      <option value="Emprego">Emprego</option>
-      <option value="Trainee">Trainee</option>
-    </select>
-    <select id="filterStatus">
-      <option value="">Status</option>
-      <option value="Aberta">Aberta</option>
-      <option value="Encerrada">Encerrada</option>
-    </select>
-    <select id="orderBy">
-      <option value="data">Ordenar por data</option>
-      <option value="relevancia">Ordenar por relevância</option>
-    </select>
-    <button id="applyFilters">Aplicar filtros</button>
-  </section>
 
-  <div id="vagaModal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div id="vagaDetalhes"></div>
-  </div>
-</div>
+      <div id="vagaModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="vagaDetalhes"></div>
+      </div>
+    </div>
 
   <!-- Modal de candidatura -->
   <div id="candidaturaModal" class="modal" aria-hidden="true">
