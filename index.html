@@ -21,89 +21,84 @@
           <h1 class="text-xl font-bold">Flipper</h1>
           <p class="text-base font-medium mt-1">Conectando Conhecimento</p>
           <p class="text-sm text-gray-200 mt-0.5 italic">
-            TAv. Tecnologia 404 - Uberlândia/MG
+            Av. Tecnologia 404 - Uberlândia/MG
           </p>
         </div>
       </div>
     </header>
 
     <main>
-      <nav>
-        <a href="javascript:history.back()"><- Voltar</a>
-      </nav>
-
-      <section>
-        <div class="container">
-          <h2>Vagas Internas</h2>
-
-          <div>
-            <input
-              type="text"
-              id="busca-vagas"
-              placeholder="Buscar vaga por título..."
-            />
-          </div>
-
-          <div>
-            <!--Filtros futuros-->
-            <img />
-            <strong>Filtros</strong>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <ul>
-            <li>
-              <div>
-                <a href="#">
-                  <div>
-                    <div>
-                      <div>
-                        <img src="#" alt="Logo Empresa" />
-                        <h3>Unimed</h3>
-                      </div>
-                      <img src="#" alt="Favoritar" />
-                    </div>
-
-                    <h3>
-                      Enfermeiro(A) Regulador(a) - Hospital Unimed Uberlândia
-                    </h3>
-
-                    <div class="grid">
-                      <div>
-                        <div>
-                          <img src="#" alt="Icone de Localização de Trabalho" />
-                        </div>
-                        <span>São Paulo - SP</span>
-                      </div>
-
-                      <div>
-                        <div>
-                          <img src="#" alt="Icone de Modelo de Trabalho" />
-                        </div>
-                        <span>Presencial</span>
-                      </div>
-
-                      <div>
-                        <div>
-                          <img src="#" alt="Efetivo" />
-                        </div>
-                        <span>Efetivo</span>
-                      </div>
-                    </div>
-                    <div>
-                      <hr />
-                      <p>Publicada em: 23/09/2025</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <div id="vagaList" class="vaga-list"></div>
+      <div id="pagination" class="pagination"></div>
     </main>
+
+       <section class="filters">
+    <input type="text" id="searchText" placeholder="Buscar por título, descrição ou requisitos..." />
+    <select id="filterArea">
+      <option value="">Área de atuação</option>
+      <option value="TI">TI</option>
+      <option value="Administração">Administração</option>
+      <option value="Engenharia">Engenharia</option>
+    </select>
+    <select id="filterCurso">
+      <option value="">Curso</option>
+      <option value="Sistemas de Informação">Sistemas de Informação</option>
+      <option value="Engenharia Civil">Engenharia Civil</option>
+      <option value="Administração">Administração</option>
+    </select>
+    <select id="filterTipo">
+      <option value="">Tipo de vaga</option>
+      <option value="Estágio">Estágio</option>
+      <option value="Emprego">Emprego</option>
+      <option value="Trainee">Trainee</option>
+    </select>
+    <select id="filterStatus">
+      <option value="">Status</option>
+      <option value="Aberta">Aberta</option>
+      <option value="Encerrada">Encerrada</option>
+    </select>
+    <select id="orderBy">
+      <option value="data">Ordenar por data</option>
+      <option value="relevancia">Ordenar por relevância</option>
+    </select>
+    <button id="applyFilters">Aplicar filtros</button>
+  </section>
+
+  <div id="vagaModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="vagaDetalhes"></div>
+  </div>
+</div>
+
+  <!-- Modal de candidatura -->
+  <div id="candidaturaModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="candTitle">
+      <button class="close-cand" aria-label="Fechar modal">&times;</button>
+      <h2 id="candTitle">Candidatar-se à vaga</h2>
+      <form id="formCandidatura">
+        <label for="candNome">Nome completo:</label>
+        <input type="text" id="candNome" required />
+
+        <label for="candEmail">E-mail:</label>
+        <input type="email" id="candEmail" required />
+
+        <label for="candArquivo">Anexar currículo (PDF):</label>
+        <input type="file" id="candArquivo" accept=".pdf" required />
+
+        <button type="submit">Enviar candidatura</button>
+      </form>
+      <p id="candMsg" class="success-msg"></p>
+    </div>
+  </div>
+
+  <div id="vagaList" class="vaga-list"></div>
+
+   <footer>
+    <p>&copy; 2025 - Faculdade Anhanguera Uberlândia | Setor de Empregabilidade</p>
+  </footer>
+
+ <script src="script.js"></script>
+
   </body>
 </html>
