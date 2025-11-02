@@ -308,3 +308,22 @@ formCadastroVaga.addEventListener("submit", e => {
   campoLink.classList.add("oculto");
   formModal.setAttribute("aria-hidden", "true");
 });
+
+// Criar nova vaga com dados do formulário
+const novaVaga = {
+  id: vagas.length + 1,
+  titulo: qs("#cadTitulo").value.trim(),
+  empresa: "Empresa cadastrada", // ou outro campo se quiser adicionar
+  area: qs("#cadArea").value.trim(),
+  curso: qs("#cadCurso").value.trim(),
+  tipo: qs("#cadTipo").value,
+  local: qs("#cadLocal").value.trim(),
+  descricao: qs("#cadDescricao").value.trim(),
+  requisitos: qs("#cadRequisitos").value.trim(),
+  data: qs("#cadData").value,
+  status: qs("#cadStatus").value,
+  visualizacoes: 0
+};
+
+vagas.push(novaVaga); // adiciona ao array
+aplicarFiltros();     // atualiza a exibição
