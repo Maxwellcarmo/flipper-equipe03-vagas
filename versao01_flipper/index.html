@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flipper | Vagas Internas</title>
+    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <img
+          src="./assets/logo.jpg"
+          alt="Logo do Flipper - Golfinho"
+          class="logo-principal"
+        />
+        <div class="titulo-header">
+          <h1>Flipper</h1>
+          <p>Conectando Conhecimento</p>
+          <p class="endereco">Av. Tecnologia 404 - Uberlândia/MG</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <nav>
+        <a href="#" class="voltar" id="btn-voltar">← Voltar</a> 
+      </nav>
+
+      <section class="busca-vagas">
+        <h2>Vagas Internas</h2>
+        <input
+          type="text"
+          id="busca-vagas"
+          placeholder="Buscar vaga por título..."
+        />
+      </section>
+
+      <section class="filtros-avancados">
+        <div class="filtro-grupo">
+            <span>Modalidade:</span>
+            <button class="btn-filtro active" data-filter-type="modalidade" data-filter-value="todos">Todos</button>
+            <button class="btn-filtro" data-filter-type="modalidade" data-filter-value="remoto">Remoto</button>
+            <button class="btn-filtro" data-filter-type="modalidade" data-filter-value="hibrido">Híbrido</button>
+            <button class="btn-filtro" data-filter-type="modalidade" data-filter-value="presencial">Presencial</button>
+        </div>
+        
+        <div class="filtro-grupo">
+            <span>Contrato:</span>
+            <button class="btn-filtro active" data-filter-type="contrato" data-filter-value="todos">Todos</button>
+            <button class="btn-filtro" data-filter-type="contrato" data-filter-value="clt">CLT</button>
+            <button class="btn-filtro" data-filter-type="contrato" data-filter-value="pj">PJ</button>
+            <button class="btn-filtro" data-filter-type="contrato" data-filter-value="estagio">Estágio</button>
+        </div>
+      </section>
+
+      <section class="lista-vagas">
+        <ul id="lista-vagas-ul">
+            </ul>
+        <p id="vagas-nao-encontradas" style="display: none;">❌ Nenhuma vaga encontrada com o termo pesquisado.</p>
+      </section>
+
+      <footer>
+        © 2025 Flipper — Conectando Conhecimento. Todos os direitos reservados.
+      </footer>
+    </main>
+    
+    <div id="modal-vaga" class="modal-backdrop">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            <h2 class="modal-title" id="modal-titulo"></h2>
+
+            <div class="modal-tags" id="modal-tags"></div>
+            
+            <div class="modal-section">
+                <h5>Descrição da Vaga</h5>
+                <p id="modal-descricao"></p>
+            </div>
+
+            <div class="modal-section modal-requisitos">
+                <h5>Requisitos e Qualificações</h5>
+                <ul id="modal-requisitos"></ul>
+            </div>
+
+            <div class="modal-section modal-beneficios">
+                <h5>Benefícios</h5>
+                <p id="modal-beneficios"></p>
+            </div>
+            
+            <a href="#" class="modal-botao-candidatar" target="_blank">CANDIDATAR-SE AGORA</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

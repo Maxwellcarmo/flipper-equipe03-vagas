@@ -1,0 +1,423 @@
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.logo-principal {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.titulo-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+.titulo-header p {
+    margin: 3px 0;
+}
+.titulo-header .endereco {
+    font-size: 0.85rem;
+    color: #dbeafe;
+    font-style: italic;
+}
+
+main {
+    padding: 0 15px;
+}
+
+nav {
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: left;
+}
+
+.voltar {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.busca-vagas {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    text-align: left;
+}
+
+.busca-vagas h2 {
+    color: #0056b3;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+#busca-vagas {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.lista-vagas {
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-vagas li {
+    list-style: none;
+    padding: 0;
+}
+
+.card-vaga {
+    display: block;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+.card-vaga:hover {
+    transform: translateY(-4px);
+}
+
+.topo-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.empresa-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.empresa-info h3 {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.logo-empresa {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.icone-favorito {
+    width: 18px;
+    height: 18px;
+    opacity: 0.6; 
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.favorito {
+    opacity: 1 !important;
+    filter: sepia(100%) hue-rotate(330deg) brightness(0.9);
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin: 0 0 15px 0;
+    color: #1f2937;
+}
+
+/* Estilos de Tags */
+.detalhes-vaga {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.detalhe-item {
+    display: flex;
+    align-items: center;
+    color: #4b5563;
+}
+
+.tag-vaga {
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.tag-clt { background-color: #d1fae5; color: #065f46; }
+.tag-pj { background-color: #fef3c7; color: #92400e; }
+.tag-presencial { background-color: #fae6d1; color: #af4f1e; }
+.tag-hibrido { background-color: #bfdbfe; color: #1e40af; }
+.tag-remoto { background-color: #e0f2fe; color: #075985; }
+.tag-estagio { background-color: #dbeafe; color: #1e3a8a; }
+
+.publicada {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+footer {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+    margin-top: 40px;
+}
+
+/* --- ESTILOS DO MODAL --- */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #6b7280;
+    border: none;
+    background: transparent;
+}
+
+.modal-title {
+    color: #0056b3;
+    margin-top: 0;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.modal-section h5 {
+    color: #1f2937;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    border-left: 4px solid #0056b3;
+    padding-left: 10px;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-tags .tag-vaga {
+    font-size: 0.85rem;
+}
+
+.modal-requisitos ul {
+    margin-top: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.modal-beneficios p {
+    white-space: pre-wrap;
+}
+
+.modal-botao-candidatar {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #065f46;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: background-color 0.2s;
+}
+.modal-botao-candidatar:hover {
+    background-color: #044e3a;
+}
+/* --- FIM DOS ESTILOS DO MODAL --- */
+
+/* --- ESTILOS DE MENSAGENS E FEEDBACK --- */
+#vagas-nao-encontradas {
+    text-align: center;
+    color: #ef4444; 
+    font-weight: bold;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #fee2e2;
+    background-color: #fef2f2;
+    border-radius: 8px;
+    display: none; 
+}
+
+/* --- ESTILOS DOS FILTROS AVANÇADOS --- */
+.filtros-avancados {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filtro-grupo {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.filtro-grupo:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.filtro-grupo span {
+    display: block;
+    font-weight: bold;
+    color: #4b5563;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.btn-filtro {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    padding: 8px 15px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.btn-filtro:hover:not(.active) {
+    background-color: #e5e7eb;
+}
+
+/* Estilos Ativos Unificados: Cores dos botões de filtro = Cores do texto das tags */
+.btn-filtro.active[data-filter-value="todos"] {
+    background-color: #0056b3;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Modalidade */
+.btn-filtro.active[data-filter-value="remoto"] { 
+    background-color: #075985;
+    color: white; border-color: #075985; 
+}
+.btn-filtro.active[data-filter-value="hibrido"] { 
+    background-color: #1e40af;
+    color: white; border-color: #1e40af; 
+}
+.btn-filtro.active[data-filter-value="presencial"] { 
+    background-color: #af4f1e;
+    color: white; border-color: #af4f1e; 
+}
+
+/* Contrato */
+.btn-filtro.active[data-filter-value="clt"] { 
+    background-color: #065f46;
+    color: white; border-color: #065f46; 
+}
+.btn-filtro.active[data-filter-value="pj"] { 
+    background-color: #92400e;
+    color: white; border-color: #92400e; 
+}
+.btn-filtro.active[data-filter-value="estagio"] { 
+    background-color: #1e3a8a;
+    color: white; border-color: #1e3a8a; 
+}
+/* --- FIM DOS ESTILOS DOS FILTROS AVANÇADOS --- */
+
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 20px 0;
+    }
+}
+@media (max-width: 640px) {
+    .logo-principal {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo-empresa {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icone-favorito {
+        width: 15px;
+        height: 15px;
+    }
+
+    .detalhes-vaga {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
