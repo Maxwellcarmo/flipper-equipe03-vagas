@@ -46,6 +46,19 @@ const vagas = [
 
 let paginaAtual = 1;
 const vagasPorPagina = 2;
+// Seletores
+const toggleCadastroBtn = document.querySelector("#toggleCadastro");
+const tipoModal = document.querySelector("#tipoModal");
+const formModal = document.querySelector("#formModal");
+const closeTipo = document.querySelector(".close-tipo");
+const closeForm = document.querySelector(".close-form");
+const tipoBtns = document.querySelectorAll(".tipo-btn");
+
+const formCadastroVaga = document.querySelector("#formCadastroVaga");
+const cadTipoInput = document.querySelector("#cadTipoCadastro");
+const campoCnpj = document.querySelector("#campoCnpj");
+const campoLink = document.querySelector("#campoLink");
+
 
 function qs(sel) { return document.querySelector(sel); }
 
@@ -245,4 +258,53 @@ document.addEventListener("DOMContentLoaded", () => {
 qs("#toggleFiltros")?.addEventListener("click", () => {
   const filtros = qs("#filtrosContainer");
   filtros.classList.toggle("oculto");
+});
+
+// Abrir modal de escolha
+toggleCadastroBtn.addEventListener("click", () => {
+  tipoModal.setAttribute("aria-hidden", "false");
+});
+
+// Fechar modal de escolha
+closeTipo.addEventListener("click", () => tipoModal.setAttribute("aria-hidden", "true"));
+
+// Fechar modal de formulário
+closeForm.addEventListener("click", () => formModal.setAttribute("aria-hidden", "true"));
+
+// Fechar clicando fora
+window.addEventListener("click", e => {
+  if (e.target === tipoModal) tipoModal.setAttribute("aria-hidden", "true");
+  if (e.target === formModal) formModal.setAttribute("aria-hidden", "true");
+});
+
+
+// Escolha do tipo e abrir modal de formulário
+tipoBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const tipo = btn.dataset.tipo;
+    cadTipoInput.value = tipo;;
+
+    // Mostrar ou ocultar campos usando classe 'oculto'
+    if (tipo === "empresa") {
+  campoCnpj.classList.remove("oculto");
+  campoLink.classList.remove("oculto");
+} else {
+      campoCnpj.classList.add("oculto");
+      campoLink.classList.add("oculto");
+    }
+
+    // Fechar modal de escolha e abrir modal de formulário
+    tipoModal.setAttribute("aria-hidden", "true");
+    formModal.setAttribute("aria-hidden", "false");
+  });
+});
+
+// Submit do formulário
+formCadastroVaga.addEventListener("submit", e => {
+  e.preventDefault();
+  alert(`Vaga cadastrada com sucesso como ${cadTipoInput.value}!`);
+  formCadastroVaga.reset();
+  campoCnpj.classList.add("oculto");
+  campoLink.classList.add("oculto");
+  formModal.setAttribute("aria-hidden", "true");
 });

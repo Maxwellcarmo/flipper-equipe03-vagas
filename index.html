@@ -31,6 +31,7 @@
   <!-- 🔍 Caixa de busca com lupa -->
   <div class="filtro-toggle">
     <button id="toggleFiltros">🔍 Buscar vagas</button>
+    <button id="toggleCadastro">➕ Cadastrar vaga</button>
   </div>
 
   <!-- 🎯 Filtros ocultáveis -->
@@ -77,6 +78,72 @@
 
   <!-- 🔢 Paginação -->
   <div id="pagination"></div>
+
+<!-- Modal de escolha do tipo de cadastro -->
+<div id="tipoModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close-tipo">&times;</span>
+    <h2>Escolha o tipo de cadastro</h2>
+    <button class="tipo-btn" data-tipo="pessoa">Pessoa Física / Aluno</button>
+    <button class="tipo-btn" data-tipo="empresa">Empresa</button>
+  </div>
+</div>
+
+<!-- Modal do formulário de cadastro -->
+<div id="formModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close-form">&times;</span>
+    <h2>Cadastrar nova vaga</h2>
+    <form id="formCadastroVaga">
+      <input type="hidden" id="cadTipoCadastro">
+      <div id="campoCnpj" class="oculto">
+        <label>CNPJ (somente empresas)</label>
+        <input type="text" id="cadCnpj">
+      </div>
+      <div id="campoLink" class="oculto">
+        <label>Link externo (opcional)</label>
+        <input type="url" id="cadLink">
+      </div>
+
+      <label>Título da vaga:</label>
+      <input type="text" id="cadTitulo" required>
+
+      <label>Área:</label>
+      <input type="text" id="cadArea" required>
+
+      <label>Curso relacionado (opcional):</label>
+      <input type="text" id="cadCurso">
+
+      <label>Tipo da vaga:</label>
+      <select id="cadTipo">
+        <option>Estágio</option>
+        <option>Efetivo</option>
+        <option>Temporário</option>
+      </select>
+
+      <label>Local:</label>
+      <input type="text" id="cadLocal" required>
+
+      <label>Descrição:</label>
+      <textarea id="cadDescricao" required></textarea>
+
+      <label>Requisitos:</label>
+      <textarea id="cadRequisitos"></textarea>
+
+      <label>Data:</label>
+      <input type="date" id="cadData" required>
+
+      <label>Status:</label>
+      <select id="cadStatus" required>
+        <option value="Aberta">Aberta</option>
+        <option value="Encerrada">Encerrada</option>
+      </select>
+
+      <button type="submit">Cadastrar Vaga</button>
+    </form>
+  </div>
+</div>
+
     </main>
 
 
