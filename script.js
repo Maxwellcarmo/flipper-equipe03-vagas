@@ -253,6 +253,13 @@ qs("#applyFilters")?.addEventListener("click", () => {
 /* ===== Inicialização ===== */
 document.addEventListener("DOMContentLoaded", () => {
   aplicarFiltros();
+
+  const cnpjInput = document.querySelector("#cadCnpj");
+  if (cnpjInput) {
+    IMask(cnpjInput, {
+      mask: "00.000.000/0000-00"
+    });
+  }
 });
 
 qs("#toggleFiltros")?.addEventListener("click", () => {
@@ -301,6 +308,13 @@ tipoBtns.forEach(btn => {
 
 // Submit do formulário
 formCadastroVaga.addEventListener("submit", e => {
+  const tipoCadastro = cadTipoInput.value;
+const cnpj = qs("#cadCnpj").value.trim();
+
+if (tipoCadastro === "empresa" && !validarCNPJ(cnpj)) {
+  alert("Esse CNPJ não é válido");
+  return;
+}
   e.preventDefault();
   alert(`Vaga cadastrada com sucesso como ${cadTipoInput.value}!`);
   formCadastroVaga.reset();
@@ -313,7 +327,7 @@ formCadastroVaga.addEventListener("submit", e => {
 const novaVaga = {
   id: vagas.length + 1,
   titulo: qs("#cadTitulo").value.trim(),
-  empresa: "Empresa cadastrada", // ou outro campo se quiser adicionar
+  empresa: qs("#cadEmpresa")?.value.trim() || "Empresa cadastrada", // ou outro campo se quiser adicionar
   area: qs("#cadArea").value.trim(),
   curso: qs("#cadCurso").value.trim(),
   tipo: qs("#cadTipo").value,
@@ -327,3 +341,41 @@ const novaVaga = {
 
 vagas.push(novaVaga); // adiciona ao array
 aplicarFiltros();     // atualiza a exibição
+
+function validarCNPJ(cnpj) {
+  cnpj = cnpj.replace(/[^\d]+/g, '');
+
+  if (cnpj.length !== 14) return false;
+
+  // Elimina CNPJs com todos os dígitos iguais
+  if (/^(\d)\1+$/.test(cnpj)) return false;
+
+  let tamanho = cnpj.length - 2;
+  let numeros = cnpj.substring(0, tamanho);
+  let digitos = cnpj.substring(tamanho);
+  let soma = 0;
+  let pos = tamanho - 7;
+
+  for (let i = tamanho; i >= 1; i--) {
+    soma += numeros.charAt(tamanho - i) * pos--;
+    if (pos < 2) pos = 9;
+  }
+
+  let resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
+  if (resultado != digitos.charAt(0)) return false;
+
+  tamanho = tamanho + 1;
+  numeros = cnpj.substring(0, tamanho);
+  soma = 0;
+  pos = tamanho - 7;
+
+  for (let i = tamanho; i >= 1; i--) {
+    soma += numeros.charAt(tamanho - i) * pos--;
+    if (pos < 2) pos = 9;
+  }
+
+  resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
+  if (resultado != digitos.charAt(1)) return false;
+
+  return true;
+}
