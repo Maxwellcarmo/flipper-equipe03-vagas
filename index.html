@@ -28,82 +28,161 @@
     </header>
 
     <main>
-      <nav>
-        <a href="javascript:history.back()"><- Voltar</a>
-      </nav>
+  <!-- 🔍 Caixa de busca com lupa -->
+  <div class="filtro-toggle">
+    <button id="toggleFiltros">🔍 Buscar vagas</button>
+    <button id="toggleCadastro">➕ Cadastrar vaga</button>
+  </div>
 
-      <section>
-        <div class="container">
-          <h2>Vagas Internas</h2>
+  <!-- 🎯 Filtros ocultáveis -->
+<div id="filtrosContainer" class="filters oculto">
+  <input type="text" id="searchText" placeholder="Buscar por palavra-chave">
+  
+  <select id="filterArea">
+    <option value="">Área</option>
+    <option value="TI">TI</option>
+    <option value="Administração">Administração</option>
+    <option value="Engenharia">Engenharia</option>
+  </select>
+  
+  <select id="filterCurso">
+    <option value="">Curso</option>
+    <option value="Sistemas de Informação">Sistemas de Informação</option>
+    <option value="Administração">Administração</option>
+    <option value="Engenharia Civil">Engenharia Civil</option>
+  </select>
+  
+  <select id="filterTipo">
+    <option value="">Tipo</option>
+    <option value="Estágio">Estágio</option>
+    <option value="Emprego">Emprego</option>
+  </select>
+  
+  <select id="filterStatus">
+    <option value="">Status</option>
+    <option value="Aberta">Aberta</option>
+    <option value="Encerrada">Encerrada</option>
+  </select>
+  
+  <select id="orderBy">
+    <option value="data">Mais recentes</option>
+    <option value="relevancia">Mais relevantes</option>
+  </select>
+  
+  <button id="applyFilters" class="btn-applyfilters">Aplicar filtros</button>
 
-          <div>
-            <input
-              type="text"
-              id="busca-vagas"
-              placeholder="Buscar vaga por título..."
-            />
-          </div>
+</div>
 
-          <div>
-            <!--Filtros futuros-->
-            <img />
-            <strong>Filtros</strong>
-          </div>
-        </div>
-      </section>
+  <!-- 📋 Lista de vagas -->
+  <div id="vagaList" class="vaga-list"></div>
 
-      <section>
-        <div class="container">
-          <ul>
-            <li>
-              <div>
-                <a href="#">
-                  <div>
-                    <div>
-                      <div>
-                        <img src="#" alt="Logo Empresa" />
-                        <h3>Unimed</h3>
-                      </div>
-                      <img src="#" alt="Favoritar" />
-                    </div>
+  <!-- 🔢 Paginação -->
+  <div id="pagination"></div>
 
-                    <h3>
-                      Enfermeiro(A) Regulador(a) - Hospital Unimed Uberlândia
-                    </h3>
+<!-- Modal de escolha do tipo de cadastro -->
+<div id="tipoModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close-tipo">&times;</span>
+    <h2>Escolha o tipo de cadastro</h2>
+    <button class="tipo-btn" data-tipo="pessoa">Pessoa Física / Aluno</button>
+    <button class="tipo-btn" data-tipo="empresa">Empresa</button>
+  </div>
+</div>
 
-                    <div class="grid">
-                      <div>
-                        <div>
-                          <img src="#" alt="Icone de Localização de Trabalho" />
-                        </div>
-                        <span>São Paulo - SP</span>
-                      </div>
+<!-- Modal do formulário de cadastro -->
+<div id="formModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close-form">&times;</span>
+    <h2>Cadastrar nova vaga</h2>
+    <form id="formCadastroVaga">
+      <input type="hidden" id="cadTipoCadastro">
+      <div id="campoCnpj" class="oculto">
+        <label>CNPJ (somente empresas)</label>
+        <input type="text" id="cadCnpj">
+      </div>
+      <div id="campoLink" class="oculto">
+        <label>Link externo (opcional)</label>
+        <input type="url" id="cadLink">
+      </div>
 
-                      <div>
-                        <div>
-                          <img src="#" alt="Icone de Modelo de Trabalho" />
-                        </div>
-                        <span>Presencial</span>
-                      </div>
+      <label>Título da vaga:</label>
+      <input type="text" id="cadTitulo" required>
 
-                      <div>
-                        <div>
-                          <img src="#" alt="Efetivo" />
-                        </div>
-                        <span>Efetivo</span>
-                      </div>
-                    </div>
-                    <div>
-                      <hr />
-                      <p>Publicada em: 23/09/2025</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <label>Área:</label>
+      <input type="text" id="cadArea" required>
+
+      <label>Curso relacionado (opcional):</label>
+      <input type="text" id="cadCurso">
+
+      <label>Tipo da vaga:</label>
+      <select id="cadTipo">
+        <option>Estágio</option>
+        <option>Efetivo</option>
+        <option>Temporário</option>
+      </select>
+
+      <label>Local:</label>
+      <input type="text" id="cadLocal" required>
+
+      <label>Descrição:</label>
+      <textarea id="cadDescricao" required></textarea>
+
+      <label>Requisitos:</label>
+      <textarea id="cadRequisitos"></textarea>
+
+      <label>Data:</label>
+      <input type="date" id="cadData" required>
+
+      <label>Status:</label>
+      <select id="cadStatus" required>
+        <option value="Aberta">Aberta</option>
+        <option value="Encerrada">Encerrada</option>
+      </select>
+
+      <button type="submit">Cadastrar Vaga</button>
+    </form>
+  </div>
+</div>
+
     </main>
+
+
+      <div id="vagaModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="vagaDetalhes"></div>
+      </div>
+    </div>
+
+  <!-- Modal de candidatura -->
+  <div id="candidaturaModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="candTitle">
+      <button class="close-cand" aria-label="Fechar modal">&times;</button>
+      <h2 id="candTitle">Candidatar-se à vaga</h2>
+      <form id="formCandidatura">
+        <label for="candNome">Nome completo:</label>
+        <input type="text" id="candNome" required />
+
+        <label for="candEmail">E-mail:</label>
+        <input type="email" id="candEmail" required />
+
+        <label for="candArquivo">Anexar currículo (PDF):</label>
+        <input type="file" id="candArquivo" accept=".pdf" required />
+
+        <button type="submit">Enviar candidatura</button>
+      </form>
+      <p id="candMsg" class="success-msg"></p>
+    </div>
+  </div>
+
+  <div id="vagaList" class="vaga-list"></div>
+
+   <footer>
+    <p>&copy; 2025 - Faculdade Anhanguera Uberlândia | Setor de Empregabilidade</p>
+  </footer>
+
+ <script src="script.js"></script>
+ <script src="https://unpkg.com/imask"></script>
+
   </body>
 </html>

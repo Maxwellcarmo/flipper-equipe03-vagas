@@ -1,4 +1,8 @@
 /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
+
+/* Reset simples */
+* { box-sizing: border-box; }
+
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -108,7 +112,6 @@
   }
   img, svg, video, canvas, audio, iframe, embed, object {
     display: block;
-    vertical-align: middle;
   }
   img, video {
     max-width: 100%;
@@ -428,3 +431,469 @@
     }
   }
 }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: white;
+  padding: 1rem;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filters input, .filters select, .filters button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.filters button {
+  background: oklch(48.8% 0.243 264.376);
+  color: white;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background: oklch(48.8% 0.243 264.376);
+}
+
+.vaga-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.vaga-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.vaga-card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.vaga-card button {
+  background: oklch(48.8% 0.243 264.376);
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.vaga-card button:hover {
+  background: oklch(48.8% 0.243 264.376);
+}
+
+#pagination {
+  display: flex;
+  gap: 10px; /* espaçamento horizontal entre os botões */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#pagination button {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#pagination button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+#pagination button.active {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  font-weight: bold;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+/* candidatura form */
+#formCandidatura { display: flex; flex-direction: column; gap: 0.65rem; }
+
+#formCandidatura input[type="text"],
+#formCandidatura input[type="email"],
+#formCandidatura input[type="file"] {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#formCandidatura button {
+  background: oklch(48.8% 0.243 264.376);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 220px;
+  align-self: center;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#formCandidatura button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* fundo escuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal[aria-hidden="true"] {
+  display: none;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#btnCand {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#btnCand:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+.btn-detalhes {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-detalhes:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+footer {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  clear: both;
+  margin-top: 40px;
+}
+
+.vaga-cabecalho {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vaga-cabecalho:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+.vaga-cabecalho h3 {
+  font-size: 1.5rem; /* aumenta o tamanho da fonte */
+  font-weight: bold; /* garante o negrito */
+  margin-bottom: 0.5rem;
+}
+
+.filtro-toggle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#toggleFiltros {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#toggleFiltros:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+.oculto {
+  display: none;
+}
+
+.btn-applyfilters {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.btn-applyfilters:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+.btn-applyfilters:focus {
+  outline: none;
+}
+
+#toggleCadastro {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#toggleCadastro:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+#campoCnpj,
+#campoLink {
+  display: block; /* mostrado ou escondido via JS */
+}
+
+/* Esconder por padrão caso queira */
+#campoCnpj.oculto,
+#campoLink.oculto {
+  display: none;
+}
+
+#tipoCadastroEscolha {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#tipoCadastroEscolha .tipo-btn {
+  background-color: oklch(48.8% 0.243 264.376);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#tipoCadastroEscolha .tipo-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal[aria-hidden="true"] {
+  display: none;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-tipo, .close-form {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.oculto { display: none; }
+
+.tipo-btn {
+  background-color: oklch(48.8% 0.243 264.376); /* mesmo tom dos outros botões */
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px oklch(48.8% 0.243 264.376);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.tipo-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px oklch(48.8% 0.243 264.376);
+}
+
+#tipoModal h2 {
+  font-size: 1.5rem; /* aumenta o tamanho da fonte */
+  font-weight: bold;  /* deixa em negrito */
+  text-align: center; /* centraliza o texto */
+  margin-bottom: 20px; /* espaço abaixo do título */
+}
+
+#tipoModal .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontalmente todo o conteúdo */
+}
+
+#tipoModal .tipo-btn {
+  margin: 10px 0; /* espaçamento vertical entre os botões */
+  width: 200px;    /* opcional: largura fixa para consistência */
+}
+
+/* Container do formulário */
+#formModal .modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* espaçamento entre os campos */
+  width: 100%;
+}
+
+/* Labels */
+#formModal label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Inputs e textarea */
+#formModal input[type="text"],
+#formModal input[type="url"],
+#formModal input[type="date"],
+#formModal select,
+#formModal textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d3d3d3;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+#formModal input:focus,
+#formModal select:focus,
+#formModal textarea:focus {
+  border-color: #4285f4; /* azul Google */
+  box-shadow: 0 0 0 2px rgba(66,133,244,0.2);
+  outline: none;
+}
+
+/* Textarea com altura maior */
+#formModal textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Campos opcionais escondidos inicialmente */
+#campoCnpj:not(.oculto),
+#campoLink:not(.oculto) {
+  display: block;
+}
+
+/* Botão submit */
+#formModal button[type="submit"] {
+  background-color: #4285f4;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#formModal button[type="submit"]:hover {
+  background-color: #357ae8;
+  transform: scale(1.02);
+}
+
